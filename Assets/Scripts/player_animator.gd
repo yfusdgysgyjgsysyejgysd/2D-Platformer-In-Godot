@@ -9,3 +9,8 @@ func _process(delta):
 		sprite.flip_h = false
 	elif player_controller.direction == -1:
 		sprite.flip_h = true
+		
+	if abs(player_controller.velocity.x) > 0.0:
+		animation_player.play("move")
+	else:
+		animation_player.play("idle")
